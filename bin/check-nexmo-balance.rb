@@ -57,7 +57,7 @@ class CheckNexmoBalance < Sensu::Plugin::Check::CLI
          default:     5,
          proc:        proc(&:to_i)
 
-  def run()
+  def run
     client = Nexmo::Client.new(
       api_key: config[:api_key],
       api_secret: config[:api_secret]
@@ -72,7 +72,5 @@ class CheckNexmoBalance < Sensu::Plugin::Check::CLI
     end
 
     ok
-
   end
-
 end
